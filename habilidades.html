@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>habilidades</title>
+    <link rel="stylesheet" href="habilidades.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;1,100&family=Koulen&family=Oswald:wght@200;300&family=Roboto+Condensed&family=Staatliches&family=Ysabeau+SC:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="nav-content">
+                <div class="toggle-btn">
+                    <i class='bx bx-plus'></i>
+                </div>
+                <span style="--i:1;">
+                    <a href="me.html"><i class='bx bxs-home'></i></a>
+                </span>
+                <span style="--i:2;">
+                    <a href="projects.html"><i class='bx bx-code-alt'></i></a>
+                </span>
+                <span style="--i:3;">
+                    <a href="contact.html"><i class='bx bx-phone-call'></i></a>
+                </span>
+                <span style="--i:4;">
+                    <a href="habilidades.html"><i class='bx bx-book-reader'></i></a>
+                </span>
+                <span style="--i:5;">
+                    <a href="certificaciones.html"><i class='bx bx-bullseye'></i></a>
+                </span>
+            </div>
+        </nav>
+
+        <div class="habilidades">
+            <h2 class="titulo">Habilidades DEV</h2>
+            <div class="hab">
+                
+                <div class="uno">
+                    <span class="text">Programacion en HTML css Javascript PHP MySql <br>
+                        Dominio de Rect para crear soluciones eficientes y funcionales.</span>
+                </div>
+
+                <div class="uno">
+                    <span class="text">
+                        Desarrollo Front-End y Back-End. Experiencia en la creacion de <br> interfaces de usuario
+                        atractivas
+                        en la implementacion de logica <br> de negocio de negocio en el Back-End</span>
+                </div>
+                <div class="uno">
+                    <span class="text">Diseño y Arquitectura: <br>
+                        Capacidad para diseñar estructuras de software solidas <br> y escalables,
+                        optimizando el rendimiento y la mantenibilidad.</span>
+                </div>
+                <div class="uno">
+                    <span class="text">Lenguajes de Programación: <br> Dominio de Java y Python, experiencia <br> en
+                        JavaScript.</span>
+                </div>
+            </div>
+            <div class="hab">
+                <div class="uno">
+                    <span class="text"><b>Desarrollo de Aplicaciones Web: </b><br> Frameworks como Spring Boot y
+                        Django.</span>
+                </div>
+
+                <div class="uno">
+                    <span class="text"><b>Diseño de Interfaces de Usuario:</b> <br> Colaboración con equipos de diseño
+                        para una
+                        experiencia <br> de usuario excepcional.</li></span>
+                </div>
+                <div class="uno">
+                    <span class="text">Arquitectura de Software: <br> Diseño y desarrollo de microservicios
+                        escalables.</span>
+                </div>
+
+                <div class="uno">
+                    <span class="text">Control de Versiones: <br> Uso experto de Git para el control de cambios y
+                        colaboración en equipo.</span>
+                </div>
+            </div>
+            <div class="hab">
+            <div class="uno">
+                <span class="text">Pruebas y Calidad: <br> Implementación de pruebas unitarias y seguimiento de
+                    buenas prácticas de desarrollo.</span>
+            </div>
+            <div class="uno">
+                <span class="text">Resolución de Problemas: <br> Habilidad para analizar y resolver desafíos
+                    técnicos
+                    de manera efectiva.</span>
+            </div>
+        </div>
+        </div>
+        <!-- final de la lista -->
+    </div>
+    <!-- fin habilidades -->
+    </div>
+    <!-- fin contenedor de info -->
+
+    <script>
+
+        // getting HTML elements
+        const nav = document.querySelector("nav"),
+            toggleBtn = nav.querySelector(".toggle-btn");
+
+        toggleBtn.addEventListener("click", () => {
+            nav.classList.toggle("open");
+        });
+
+        // js code to make draggable nav
+        function onDrag({ movementY }) { //movementY gets mouse vertical value
+            const navStyle = window.getComputedStyle(nav), //getting all css style of nav
+                navTop = parseInt(navStyle.top), // getting nav top value & convert it into string
+                navHeight = parseInt(navStyle.height), // getting nav height value & convert it into string
+                windHeight = window.innerHeight; // getting window height
+
+            nav.style.top = navTop > 0 ? `${navTop + movementY}px` : "1px";
+            if (navTop > windHeight - navHeight) {
+                nav.style.top = `${windHeight - navHeight}px`;
+            }
+        }
+
+        //this function will call when user click mouse's button and  move mouse on nav
+        nav.addEventListener("mousedown", () => {
+            nav.addEventListener("mousemove", onDrag);
+        });
+
+        //these function will call when user relase mouse button and leave mouse from nav
+        nav.addEventListener("mouseup", () => {
+            nav.removeEventListener("mousemove", onDrag);
+        });
+        nav.addEventListener("mouseleave", () => {
+            nav.removeEventListener("mousemove", onDrag);
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

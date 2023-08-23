@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Handjet', cursive;
+  font-family: 'M PLUS 1p', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Teko', sans-serif;
+}
+
+nav {
+  position: absolute;
+  top: 20px;
+  right: 40em;
+  width: 80px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+nav .nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-45deg);
+}
+
+.nav-content .toggle-btn,
+.nav-content span a {
+  height: 60px;
+  width: 60px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-content .toggle-btn {
+  font-size: 35px;
+  color: #0e2431;
+  z-index: 100;
+  cursor: pointer;
+  transform: rotate(-225deg);
+  transition: all 0.6s ease;
+}
+
+nav.open .toggle-btn {
+  transform: rotate(0deg);
+}
+
+.nav-content span {
+  position: absolute;
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+nav.open .nav-content span {
+  transform: rotate(calc(var(--i) * (360deg/8))) translateY(120px);
+  opacity: 1;
+}
+
+.nav-content span a {
+  text-decoration: none;
+  transform: rotate(45deg);
+}
+
+.nav-content span a i {
+  font-size: 24px;
+  color: #0e2431;
+  transform: rotate(calc(var(--i) * (360deg/ -8)));
+  opacity: 0.8;
+  transition: 0.2s;
+
+}
+
+.nav-content span a:hover i {
+  opacity: 1;
+}
+
+.fotoperfil {
+  position: relative;
+  left: 50em;
+  width: 30em;
+  height: 50em;
+  bottom: 10em;
+  z-index: -1;
+}
+
+.name {
+  font-family: 'Bitter', serif;
+  font-family: 'Koulen', cursive;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Staatliches', cursive;
+  font-family: 'Ysabeau SC', sans-serif;
+  position: relative;
+  font-size: 20px;
+  padding: 5em;
+  width: 30em;
+  left: 15em;
+  top: 10em;
+  z-index: -1;
+
+}

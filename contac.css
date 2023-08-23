@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav {
+  position: absolute;
+  top: 20px;
+  right: 35em;
+  width: 80px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+nav .nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-45deg);
+}
+
+.nav-content .toggle-btn,
+.nav-content span a {
+  height: 60px;
+  width: 60px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-content .toggle-btn {
+  font-size: 35px;
+  color: #0e2431;
+  z-index: 100;
+  cursor: pointer;
+  transform: rotate(-225deg);
+  transition: all 0.6s ease;
+}
+
+nav.open .toggle-btn {
+  transform: rotate(0deg);
+}
+
+.nav-content span {
+  position: absolute;
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+nav.open .nav-content span {
+  transform: rotate(calc(var(--i) * (360deg/8))) translateY(120px);
+  opacity: 1;
+}
+
+.nav-content span a {
+  text-decoration: none;
+  transform: rotate(45deg);
+}
+
+.nav-content span a i {
+  font-size: 24px;
+  color: #0e2431;
+  transform: rotate(calc(var(--i) * (360deg/ -8)));
+  opacity: 0.8;
+  transition: 0.2s;
+
+}
+
+.nav-content span a:hover i {
+  opacity: 1;
+}
+
+.container {
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  pointer-events: none;
+}
+
+.zord {
+
+  position: absolute;
+ left: 1em;
+  top: 15em;
+  
+  margin: 1em;
+  display: block;
+  width: 5em;
+
+;
+  border-radius: 5em;
+}
+
+.ima {
+  width: 2em;
+  height: 2em;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.uno {
+  position: relative;
+  margin: 1em;
+ padding: 0.5em;
+  width: 3em;
+  background-color: #ffffff;
+
+  border-radius: 50%;
+  box-shadow: #000000 3px 3px 6px;
+}
+.uno:hover{
+  background:#fe0ab7;
+}
+
+
+.bgAnimation {
+  position: relative;
+  top: 0;
+  left: 65%;
+  width: 30%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+
+  filter: saturate(2);
+  overflow: hidden;
+
+}
+
+.colorBox {
+  z-index: 2;
+  filter: brightness(1.1);
+  transition: 0.5s ease;
+  position: relative;
+  margin: 0.5px;
+  background: #ffffff;
+}
+
+.colorBox:hover {
+  background: #3697ff47;
+  transition-duration: 0s;
+}
+
+.backgroundAmim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #5d5a59;
+  filter: blur(30px);
+  animation: animBack 5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes animBack {
+  0% {
+    top: -60px;
+  }
+
+  100% {
+    top: 120%;
+  }
+}
